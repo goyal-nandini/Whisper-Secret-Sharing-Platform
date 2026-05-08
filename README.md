@@ -1,20 +1,36 @@
-# 🤫 Whisper – Secret Sharing Platform
+# 🤫 Whisper 
 
-Whisper is a full-stack web application built using **Node.js**, **Express.js**, and **EJS** that fetches and displays anonymous secrets from an external API in a clean and minimal UI.
+Whisper is a modern full-stack web application that fetches and displays anonymous secrets from strangers around the world in a beautiful and interactive UI.
 
-This project demonstrates:
-- Server-side rendering with EJS
-- Fetching data from an external API using Axios
-- Serving static files with Express
+Built using Node.js, Express.js, EJS, and Axios, this project demonstrates server-side rendering, API integration, responsive UI design, and deployment on Vercel.
 
 ---
 
-## 🚀 Features
+## 🌐 Live Demo
 
-- Fetches random secrets from a public API
-- Displays the secret along with the anonymous username
-- Clean UI using custom CSS
-- Simple and beginner-friendly project structure
+[Live Demo](https://goyal-nandini-whisper-secret-sharin.vercel.app/)
+
+
+---
+
+## 📸 Screenshots
+
+### 🖥️ Home Page
+
+<img width="1911" height="914" alt="Screenshot 2026-05-09 022151" src="https://github.com/user-attachments/assets/e470b0e4-78c1-47b9-9576-660680567bb2" />
+
+
+---
+
+## ✨ Features
+
+* 🔒 Anonymous secret sharing experience
+* 🌍 Fetches random secrets using external API
+* ⚡ Fast server-side rendering with EJS
+* 🎨 Modern glassmorphism UI
+* 📱 Fully responsive design
+* 🔄 Reveal another secret instantly
+* 🚀 Deployed on Vercel
 
 ---
 
@@ -25,18 +41,19 @@ This project demonstrates:
 - **HTTP Client:** Axios
 - **Frontend:** HTML, CSS
 - **API Used:** Secrets API (App Brewery)
+- **Deplyment** Vercel
+
+
+
 
 ---
 
 ## 📁 Project Structure
 
-```
-
-Whisper-Secret-Sharing-Platform/
+```bash
+Whisper-Anonymous-Secrets-Viewer/
 │
 ├── public/
-│   ├── images/
-│   │   └── whisper-img.jpg
 │   └── styles/
 │       └── main.css
 │
@@ -47,41 +64,39 @@ Whisper-Secret-Sharing-Platform/
 ├── package.json
 ├── package-lock.json
 └── README.md
-
-````
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to run the project locally:
-
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/your-username/Whisper-Secret-Sharing-Platform.git
-````
-
-### 2️⃣ Navigate to the project folder
+### 1️⃣ Clone the Repository
 
 ```bash
-cd Whisper-Secret-Sharing-Platform
+git clone https://github.com/goyal-nandini/Whisper-Anonymous-Secrets-Viewer.git
 ```
 
-### 3️⃣ Install dependencies
+### 2️⃣ Navigate to the Project Folder
+
+```bash
+cd Whisper-Anonymous-Secrets-Viewer
+```
+
+### 3️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4️⃣ Run the server
+### 4️⃣ Start the Server
 
 ```bash
-node index.js
+npm start
 ```
 
-### 5️⃣ Open in browser
+### 5️⃣ Open in Browser
 
-```
+```bash
 http://localhost:3000
 ```
 
@@ -89,19 +104,17 @@ http://localhost:3000
 
 ## 🔄 How It Works
 
-1. The server listens on **port 3000**
-2. When the user visits `/`, the app:
-
-   * Sends a GET request to the Secrets API using Axios
-   * Receives a random secret and username
-   * Passes the data to `index.ejs`
-3. EJS dynamically renders the secret on the page
+1. User visits the homepage.
+2. Express server handles the request.
+3. Axios fetches a random secret from the API.
+4. Secret data is passed to the EJS template.
+5. Dynamic content is rendered and displayed beautifully on the UI.
 
 ---
 
-## 📌 API Endpoint Used
+## 📌 API Used
 
-```
+```bash
 https://secrets-api.appbrewery.com/random
 ```
 
@@ -109,8 +122,34 @@ https://secrets-api.appbrewery.com/random
 
 ## 🎯 Learning Outcomes
 
-* Understanding Express server setup
-* Using Axios for API calls
-* Passing data from backend to EJS templates
-* Serving static assets (CSS, images)
-* Error handling with `try-catch`
+This project helped in understanding:
+
+* Express server setup
+* EJS templating engine
+* API handling using Axios
+* Server-side rendering
+* Responsive UI design
+* Vercel deployment
+* Debugging deployment issues
+
+---
+
+## 🚀 Future Improvements
+
+* Add dynamic fetching without full page reload
+* Add dynamic secret categories and filtering
+* Integrate MongoDB database
+* Add authentication system
+* Add animations and transitions
+* Add dark/light theme toggle
+
+---
+
+## 👩‍💻 Author
+
+### Nandini Goyal
+
+* GitHub: [https://github.com/goyal-nandini](https://github.com/goyal-nandini)
+
+
+
