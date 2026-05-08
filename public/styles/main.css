@@ -1,117 +1,211 @@
 :root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height) / 1.5);
+  --bg-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --text-color: #ffffff;
+  --secondary-text: #cbd5e1;
+  --accent: #8b5cf6;
+  --accent-2: #38bdf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
-  background: #212534;
+  font-family: "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at top left, #312e81, transparent 30%),
+    radial-gradient(circle at bottom right, #0ea5e9, transparent 30%),
+    var(--bg-color);
+
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  box-sizing: border-box;
-}
-h1 {
-  color: white;
-  font-family: "Titan One", cursive;
-  margin-bottom: 20px;
-}
-.card {
-  background: url("../images/whisper-img.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: var(--card-width);
-  height: var(--card-height);
-  padding: 3px;
-  position: relative;
-  border-radius: 6px;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+/* Background Glow Effects */
+
+.background-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.glow-1 {
+  width: 250px;
+  height: 250px;
+  background: #8b5cf6;
+  top: -60px;
+  left: -60px;
+}
+
+.glow-2 {
+  width: 300px;
+  height: 300px;
+  background: #0ea5e9;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Main Container */
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 0%);
-  font-family: "Gloria Hallelujah", cursive;
+}
+
+/* Hero Section */
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: var(--secondary-text);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* Secret Card */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  padding: 45px 35px;
+
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.25),
+    0 0 40px rgba(14, 165, 233, 0.15);
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .card:hover {
-  color: rgb(88 199 250 / 100%);
-  transition: color 1s;
-}
-.card:hover:before,
-.card:hover:after {
-  animation: none;
-  opacity: 0;
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 0 35px rgba(139, 92, 246, 0.4),
+    0 0 60px rgba(14, 165, 233, 0.25);
 }
 
-.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(
-    var(--rotate),
-    #5ddcff,
-    #3c67e3 43%,
-    #4e00c2
+/* Secret Text */
+
+.secret {
+  color: var(--text-color);
+
+  font-size: 1.6rem;
+  line-height: 1.8;
+
+  font-weight: 400;
+
+  margin-bottom: 30px;
+}
+
+/* Divider */
+
+.divider {
+  width: 70px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    var(--accent),
+    var(--accent-2)
   );
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
+
+  margin: 0 auto 25px auto;
+  border-radius: 999px;
 }
 
-.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate),
-    #5ddcff,
-    #3c67e3 43%,
-    #4e00c2
-  );
-  opacity: 1;
-  transition: opacity 0.5s;
-  animation: spin 2.5s linear infinite;
-}
-@property --rotate {
-  syntax: "<angle>";
-  initial-value: 132deg;
-  inherits: false;
-}
-
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}
-
-a {
-  color: #212534;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: bold;
-  margin-top: 2rem;
-}
+/* Username */
 
 .user {
+  color: var(--secondary-text);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+/* Button Section */
+
+.button-section {
+  margin-top: 35px;
+}
+
+/* Button */
+
+.btn {
+  border: none;
+  outline: none;
+
+  padding: 14px 28px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-2)
+  );
+
   color: white;
-  font-size: 24px;
-  font-family: "Titan One", cursive;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.92;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .secret {
+    font-size: 1.25rem;
+  }
+
+  .card {
+    padding: 35px 24px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
