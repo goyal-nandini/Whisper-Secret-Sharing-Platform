@@ -1,27 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Lisper</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Whisper | Secret Sharing Platform</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body>
-  <h1>What's your secret?</h1>
-  <div class="card">
-    <p>
-      <%= secret %>
-    </p>
-  </div>
-  
-  <p class="user">
-    <%= user %>
-  </p>
+
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <main class="container">
+
+    <section class="hero-section">
+
+      <h1 class="title">
+        Whisper
+      </h1>
+
+      <p class="subtitle">
+        Anonymous secrets shared by strangers around the world.
+      </p>
+
+    </section>
+
+    <section class="card">
+
+      <p class="secret">
+        “<%= secret %>”
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="user">
+        — <%= user %>
+      </p>
+
+    </section>
+
+    <section class="button-section">
+
+      <button
+        class="btn"
+        onclick="window.location.reload()">
+        Reveal Another Secret
+      </button>
+
+    </section>
+
+  </main>
+
 </body>
 
 </html>
